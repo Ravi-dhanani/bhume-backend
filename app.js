@@ -12,6 +12,7 @@ var inquiry = require("./routes/inquiry");
 var about = require("./routes/about");
 var termsCondition = require("./routes/terms-condition");
 var privacyPolicy = require("./routes/privacy-policy");
+var admin = require("./routes/admin");
 
 var app = express();
 app.use(cors());
@@ -33,6 +34,7 @@ app.use("/api", inquiry);
 app.use("/api", about);
 app.use("/api", termsCondition);
 app.use("/api", privacyPolicy);
+app.use("/api", admin);
 app.use(function (req, res, next) {
   res.send("hello");
   next(createError(404));
