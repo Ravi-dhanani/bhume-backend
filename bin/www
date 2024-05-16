@@ -12,7 +12,7 @@ var mongoose = require("mongoose");
 
 // .connect("mongodb+srv://bhume:bhume@cluster0.hurqxck.mongodb.net/")
 mongoose
-  .connect("mongodb://127.0.0.1:27017/bhume")
+  .connect("mongodb+srv://bhume:bhume@cluster0.hurqxck.mongodb.net/")
   .then(() => console.log("MongoDB Connected!!!"));
 
 /**
