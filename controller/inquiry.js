@@ -49,3 +49,19 @@ exports.update_inquiry = async (req, res) => {
     });
   }
 };
+
+exports.delete_inquiry = async (req, res) => {
+  try {
+    const id = req.params.id;
+    var data = await inquiry.findByIdAndDelete(id);
+    res.status(200).json({
+      message: "Inquiry Delete SuccessFully",
+      data,
+      status: true,
+    });
+  } catch (error) {
+    res.status(200).json({
+      status: error,
+    });
+  }
+};

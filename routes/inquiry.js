@@ -6,5 +6,6 @@ var inquiry = require("../controller/inquiry");
 router.post("/add_inquiry", inquiry.add_inquiry);
 router.get("/get_inquiry", inquiry.get_inquiry);
 router.put("/update_inquiry/:id", inquiry.update_inquiry);
+router.put("/delete_inquiry/:id", inquiry.delete_inquiry);
 
 module.exports = router;
