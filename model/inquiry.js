@@ -5,6 +5,10 @@ var inquirySchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  companyName: {
+    type: String,
+    require: true,
+  },
   email: {
     type: String,
     require: true,
