@@ -19,7 +19,7 @@ exports.add_home = async (req, res) => {
 
 exports.get_home = async (req, res) => {
   try {
-    var data = await home.findOne({ language_id: req.params.id });
+    var data = await home.find();
 
     res.status(200).json({
       message: "home title",
