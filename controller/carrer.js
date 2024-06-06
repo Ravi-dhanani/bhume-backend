@@ -32,6 +32,22 @@ exports.get_career = async (req, res) => {
     });
   }
 };
+exports.get_single_career = async (req, res) => {
+  try {
+    // var data = await language.find().populate("cat_id").select("cat_id");
+    var data = await career.findOne(req.body._id);
+    console.log(data);
+    res.status(200).json({
+      message: "get Career ",
+      data,
+      status: true,
+    });
+  } catch (error) {
+    res.status(200).json({
+      status: error,
+    });
+  }
+};
 
 exports.update_career = async (req, res) => {
   try {
