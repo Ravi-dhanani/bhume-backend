@@ -49,7 +49,6 @@ exports.admin_login = async (req, res) => {
       }
       if (adminLogin) {
         var token = jwt.sign({ id: adminLogin._id }, "Bhume");
-        console.log(token);
         res.status(200).json({
           message: "Admin Successfully",
           data: adminLogin,
