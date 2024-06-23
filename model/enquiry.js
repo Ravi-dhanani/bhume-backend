@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 
-var inquirySchema = new mongoose.Schema({
+var enquirySchema = new mongoose.Schema({
   name: {
     type: String,
     require: true,
@@ -27,4 +27,4 @@ var inquirySchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("inquiry", inquirySchema);
+module.exports = mongoose.model("enquiry", enquirySchema);

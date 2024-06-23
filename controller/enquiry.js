@@ -1,14 +1,13 @@
 var express = require("express");
-var router = express.Router();
 
-var inquiry = require("../model/inquiry");
+var enquiry = require("../model/enquiry");
 
-exports.add_inquiry = async (req, res) => {
+exports.add_enquiry = async (req, res) => {
   try {
     req.body.Date = new Date();
-    var data = await inquiry.create(req.body);
+    var data = await enquiry.create(req.body);
     res.status(200).json({
-      message: "Inquiry Add Successfully",
+      message: "Enquiry Add Successfully",
       data,
       status: true,
     });
@@ -19,12 +18,12 @@ exports.add_inquiry = async (req, res) => {
   }
 };
 
-exports.get_inquiry = async (req, res) => {
+exports.get_enquiry = async (req, res) => {
   try {
     // var data = await language.find().populate("cat_id").select("cat_id");
-    var data = await inquiry.find();
+    var data = await enquiry.find();
     res.status(200).json({
-      message: "Inquiry List",
+      message: "Enquiry List",
       data,
       status: true,
     });
@@ -35,12 +34,12 @@ exports.get_inquiry = async (req, res) => {
   }
 };
 
-exports.update_inquiry = async (req, res) => {
+exports.update_enquiry = async (req, res) => {
   try {
     const id = req.params.id;
-    var data = await inquiry.findByIdAndUpdate(id, req.body, { new: true });
+    var data = await enquiry.findByIdAndUpdate(id, req.body, { new: true });
     res.status(200).json({
-      message: "Inquiry Update SuccessFully",
+      message: "Enquiry Update SuccessFully",
       data,
       status: true,
     });
@@ -51,12 +50,12 @@ exports.update_inquiry = async (req, res) => {
   }
 };
 
-exports.delete_inquiry = async (req, res) => {
+exports.delete_Enquiry = async (req, res) => {
   try {
     const id = req.params.id;
-    var data = await inquiry.findByIdAndDelete(id);
+    var data = await enquiry.findByIdAndDelete(id);
     res.status(200).json({
-      message: "Inquiry Delete SuccessFully",
+      message: "Enquiry Delete SuccessFully",
       data,
       status: true,
     });
