@@ -39,8 +39,8 @@ app.use("/api", admin);
 app.use("/api", services);
 
 app.use(function (req, res, next) {
-  res.send("hello");
-  next(createError(404));
+  res.send("Hello I am Bhume");
+  // next(createError(404));
 });
 
 // error handler

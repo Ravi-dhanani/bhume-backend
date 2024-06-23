@@ -6,25 +6,38 @@ exports.add_enquiry = async (req, res) => {
   try {
     req.body.Date = new Date().toISOString().slice(0, 10);
     var data = await enquiry.create(req.body);
-    res.status(200).json({
-      message: "Enquiry Add Successfully",
-      data,
-      status: true,
-    });
 
+    var datetime = new Date();
+    const date = datetime.toISOString().slice(0, 10);
     var transporter = nodemailer.createTransport({
       service: "gmail",
+      secure: true,
+      port: 465,
       auth: {
         user: "ravidhanani78@gmail.com",
-        pass: "RAVIDHANANI",
+        pass: "xvtl drch wmfz qxih",
       },
     });
 
     var mailOptions = {
       from: "ravidhanani78@gmail.com",
       to: "ravidhanani9510@gmail.com",
-      subject: "Sending Email using Node.js",
-      text: "That was easy!",
+      subject: "New Enquiry on Bhume Engineering",
+      text: `    Hello ${data.name}
+            Date:   ${date}
+
+            Full Name:   ${data.name}
+
+            Company Name:   ${data.companyName}
+
+            Email Address:  ${data.email}
+
+            Phone Number:  ${data.mobileNo}
+
+            Message:  ${data.message}
+              
+            Thanks
+      `,
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
@@ -33,6 +46,11 @@ exports.add_enquiry = async (req, res) => {
       } else {
         console.log("Email sent: " + info.response);
       }
+    });
+    res.status(200).json({
+      message: "Enquiry Add Successfully",
+      data,
+      status: true,
     });
   } catch (error) {
     res.status(200).json({
