@@ -1,4 +1,4 @@
-var express = require("express");
+var nodemailer = require("nodemailer");
 
 var enquiry = require("../model/enquiry");
 
@@ -10,6 +10,29 @@ exports.add_enquiry = async (req, res) => {
       message: "Enquiry Add Successfully",
       data,
       status: true,
+    });
+
+    var transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "ravidhanani78@gmail.com",
+        pass: "RAVIDHANANI",
+      },
+    });
+
+    var mailOptions = {
+      from: "ravidhanani78@gmail.com",
+      to: "ravidhanani9510@gmail.com",
+      subject: "Sending Email using Node.js",
+      text: "That was easy!",
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("Email sent: " + info.response);
+      }
     });
   } catch (error) {
     res.status(200).json({
