@@ -4,7 +4,7 @@ var enquiry = require("../model/enquiry");
 
 exports.add_enquiry = async (req, res) => {
   try {
-    req.body.Date = new Date().format("DD/MM/YYYY");
+    req.body.Date = new Date().toISOString().slice(0, 10);
     var data = await enquiry.create(req.body);
     res.status(200).json({
       message: "Enquiry Add Successfully",
