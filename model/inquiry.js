@@ -21,6 +21,10 @@ var inquirySchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  Date: {
+    type: String,
+    require: true,
+  },
 });
 
 module.exports = mongoose.model("inquiry", inquirySchema);
