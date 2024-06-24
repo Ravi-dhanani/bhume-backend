@@ -5,6 +5,10 @@ var servicesSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "language",
   },
+  title: {
+    type: String,
+    require: true,
+  },
   shortDescription: {
     type: String,
     require: true,

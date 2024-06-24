@@ -8,7 +8,7 @@ var logger = require("morgan");
 var language = require("./routes/language");
 var home = require("./routes/home");
 var career = require("./routes/career");
-var inquiry = require("./routes/inquiry");
+var enquiry = require("./routes/enquiry");
 var about = require("./routes/about");
 var termsCondition = require("./routes/terms-condition");
 var privacyPolicy = require("./routes/privacy-policy");
@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/api", language);
 app.use("/api", home);
 app.use("/api", career);
-app.use("/api", inquiry);
+app.use("/api", enquiry);
 app.use("/api", about);
 app.use("/api", termsCondition);
 app.use("/api", privacyPolicy);
@@ -39,8 +39,8 @@ app.use("/api", admin);
 app.use("/api", services);
 
 app.use(function (req, res, next) {
-  res.send("hello");
-  next(createError(404));
+  res.send("Hello I am Bhume");
+  // next(createError(404));
 });
 
 // error handler

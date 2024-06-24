@@ -19,7 +19,7 @@ exports.add_home = async (req, res) => {
 
 exports.get_Lst_home = async (req, res) => {
   try {
-    var data = await home.find();
+    var data = await home.find().populate("language_id");
 
     res.status(200).json({
       message: "home title",

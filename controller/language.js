@@ -33,6 +33,21 @@ exports.get_Languages = async (req, res) => {
     });
   }
 };
+exports.get_Language = async (req, res) => {
+  try {
+    // var data = await language.find().populate("cat_id").select("cat_id");
+    var data = await language.findOne({ _id: req.params.id });
+    res.status(200).json({
+      message: "get Language ",
+      data,
+      status: true,
+    });
+  } catch (error) {
+    res.status(200).json({
+      status: error,
+    });
+  }
+};
 
 exports.update_language = async (req, res) => {
   try {

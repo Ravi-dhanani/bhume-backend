@@ -19,7 +19,7 @@ exports.add_services = async (req, res) => {
 
 exports.get_services = async (req, res) => {
   try {
-    var data = await services.find();
+    var data = await services.find().populate("language");
 
     res.status(200).json({
       message: "services list",

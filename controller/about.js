@@ -19,7 +19,7 @@ exports.add_about = async (req, res) => {
 
 exports.get_about = async (req, res) => {
   try {
-    var data = await about.find();
+    var data = await about.find().populate("language");
     res.status(200).json({
       message: "About List",
       data,
