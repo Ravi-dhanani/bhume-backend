@@ -15,7 +15,7 @@ var aboutSchema = new mongoose.Schema({
   },
   Description: [
     {
-      title: {
+      name: {
         type: String,
         required: true,
       },
