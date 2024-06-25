@@ -13,16 +13,18 @@ var aboutSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  choose: [
+  Description: [
     {
-      type: String,
-      required: true,
+      title: {
+        type: String,
+        required: true,
+      },
+      description: {
+        type: String,
+        required: true,
+      },
     },
   ],
-  longDescription: {
-    type: String,
-    require: true,
-  },
 });
 
 module.exports = mongoose.model("about", aboutSchema);
