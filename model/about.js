@@ -13,6 +13,12 @@ var aboutSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  choose: [
+    {
+      type: String,
+      required: true,
+    },
+  ],
   longDescription: {
     type: String,
     require: true,
