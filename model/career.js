@@ -1,6 +1,10 @@
 var mongoose = require("mongoose");
 
 var careersSchema = new mongoose.Schema({
+language_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "language",
+  },
   title: {
     type: String,
     require: true,
