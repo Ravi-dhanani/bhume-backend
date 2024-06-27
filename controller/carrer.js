@@ -20,7 +20,7 @@ exports.add_career = async (req, res) => {
 exports.get_career = async (req, res) => {
   try {
     // var data = await language.find().populate("cat_id").select("cat_id");
-    var data = await career.find();
+    var data = await career.find().populate("language");
     res.status(200).json({
       message: "Career List",
       data,
