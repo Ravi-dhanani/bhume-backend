@@ -47,7 +47,20 @@ exports.get_single_career = async (req, res) => {
     });
   }
 };
-
+exports.get_Career_data= async (req, res) => {
+  try {
+    var data = await about.findOne({ language: req.params.id });
+    res.status(200).json({
+      message: "get Career",
+      data,
+      status: true,
+    });
+  } catch (error) {
+    res.status(200).json({
+      status: error,
+    });
+  }
+};
 exports.update_career = async (req, res) => {
   try {
     const id = req.params.id;
