@@ -24,8 +24,7 @@ var aboutSchema = new mongoose.Schema({
   shortDescription: {
     type: String,
     require: true,
-  },
- s
+  }
 });
 
 module.exports = mongoose.model("about", aboutSchema);
