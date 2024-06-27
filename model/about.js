@@ -9,22 +9,23 @@ var aboutSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "language",
   },
+  section1: {
+    type: String,
+    require: true,
+  },
+  section2: {
+    type: String,
+    require: true,
+  },
+  section3: {
+    type: String,
+    require: true,
+  },
   shortDescription: {
     type: String,
     require: true,
   },
-  Description: [
-    {
-      name: {
-        type: String,
-        required: true,
-      },
-      description: {
-        type: String,
-        required: true,
-      },
-    },
-  ],
+ s
 });
 
 module.exports = mongoose.model("about", aboutSchema);
