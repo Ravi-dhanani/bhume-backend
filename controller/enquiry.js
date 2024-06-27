@@ -23,20 +23,19 @@ exports.add_enquiry = async (req, res) => {
       from: "ravidhanani78@gmail.com",
       to: "ravidhanani9510@gmail.com",
       subject: "New Enquiry on Bhume Engineering",
-      text: `    Hello ${data.name}
-            Date:   ${date}
+      text: `   Hello There,
+               We have received a new Enquiry from our Portal, Please find the details given below.
 
-            Full Name:   ${data.name}
+           Full Name:    ${data.name}
+           Company Name: ${data.companyName}
+           Email Address:  ${data.email}
+           Phone Number:  ${data.mobileNo}
+           Message:  ${data.message}
+           
+          Thanks, 
+          Kind Regards, 
+          Bhume Engineering. 
 
-            Company Name:   ${data.companyName}
-
-            Email Address:  ${data.email}
-
-            Phone Number:  ${data.mobileNo}
-
-            Message:  ${data.message}
-              
-            Thanks
       `,
     };
 
