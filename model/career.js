@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 
 var careersSchema = new mongoose.Schema({
-language_id: {
+language: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "language",
   },
