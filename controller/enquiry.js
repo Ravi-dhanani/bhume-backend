@@ -14,13 +14,13 @@ exports.add_enquiry = async (req, res) => {
       secure: true,
       port: 465,
       auth: {
-        user: "enquiry@bhumeeng.com",
-        pass: "BhumeEngg@012Enq",
+        user: "bhumeengineering@gmail.com",
+        pass: "miip ahhn axyu pndh",
       },
     });
 
     var mailOptions = {
-      from: data.email,
+      from: "bhumeengineering@gmail.com",
       to: "enquiry@bhumeeng.com",
       subject: "New Enquiry on Bhume Engineering",
       text: `   Hello There,
