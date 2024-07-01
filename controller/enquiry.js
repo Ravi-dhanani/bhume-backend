@@ -20,8 +20,8 @@ exports.add_enquiry = async (req, res) => {
     });
 
     var mailOptions = {
-      from: "enquiry@bhumeeng.com",
-      to: data.email,
+      from: data.email,
+      to: "enquiry@bhumeeng.com",
       subject: "New Enquiry on Bhume Engineering",
       text: `   Hello There,
                We have received a new Enquiry from our Portal, Please find the details given below.
