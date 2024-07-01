@@ -15,7 +15,7 @@ exports.add_enquiry = async (req, res) => {
       port: 465,
       auth: {
         user: "enquiry@bhumeeng.com",
-        pass: "xvtl drch wmfz qxih",
+        pass: "BhumeEngg@012Enq",
       },
     });
 
