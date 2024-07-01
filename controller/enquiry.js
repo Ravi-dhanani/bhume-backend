@@ -14,14 +14,14 @@ exports.add_enquiry = async (req, res) => {
       secure: true,
       port: 465,
       auth: {
-        user: "ravidhanani78@gmail.com",
+        user: "enquiry@bhumeeng.com",
         pass: "xvtl drch wmfz qxih",
       },
     });
 
     var mailOptions = {
-      from: "ravidhanani78@gmail.com",
-      to: "ravidhanani9510@gmail.com",
+      from: "enquiry@bhumeeng.com",
+      to: data.email,
       subject: "New Enquiry on Bhume Engineering",
       text: `   Hello There,
                We have received a new Enquiry from our Portal, Please find the details given below.
